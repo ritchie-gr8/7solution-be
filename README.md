@@ -75,7 +75,7 @@ go run ./cmd/server/main.go
 The environment variables are as follows:
 
 ```env
-APP_HOST=127.0.0.1 // 0.0.0.0 for docker
+APP_HOST=127.0.0.1 # 0.0.0.0 for docker
 APP_PORT=3000
 APP_NAME=your_app_name
 APP_VERSION=v.0.1.0
