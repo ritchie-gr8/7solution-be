@@ -334,3 +334,7 @@ If you see connection errors to MongoDB:
 - 🛡️ **Role Check**: Add role check for protected endpoints (eg. only admin can delete users)
 
 ## Thank you for your consideration 🙏
+
+I also did the frontend challenge even though I'm not applying for the frontend position but I found it interesting.
+
+You can find it here: [frontend challenge](https://github.com/ritchie-gr8/7solution-fe)
