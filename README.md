@@ -331,5 +331,6 @@ If you see connection errors to MongoDB:
 - 🔍 **Request ID Generation**: Unique IDs for each request to improve logging and debugging
 - 📦 **Enhanced Docker Setup**: Use Docker secrets instead of copying env files into containers
 - 📄 **Pagination & Total Count**: Enhance GET /users endpoint with pagination parameters and total count in response for better client-side handling
+- 🛡️ **Role Check**: Add role check for protected endpoints (eg. only admin can delete users)
 
 ## Thank you for your consideration 🙏

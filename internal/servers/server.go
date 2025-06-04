@@ -71,14 +71,11 @@ func (s *server) Start() {
 		time.Duration(s.cfg.Jwt().AccessExpiresAt())*time.Second))
 	StartUserCountMonitor(ctx, userSvc)
 
-	// Set up graceful shutdown
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt)
 
-	// Create a done channel to signal when server is done
 	done := make(chan bool, 1)
 
-	// Start server in a goroutine so it doesn't block
 	go func() {
 		log.Printf("server running on %s", s.cfg.App().Url())
 		if err := s.app.Listen(s.cfg.App().Url()); err != nil {
@@ -87,7 +84,6 @@ func (s *server) Start() {
 		done <- true
 	}()
 
-	// Block until we receive a signal or the server exits
 	select {
 	case <-c:
 		log.Println("shutting down server...")
