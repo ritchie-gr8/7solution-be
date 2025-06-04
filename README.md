@@ -9,7 +9,7 @@ This is a user management API service built with Go. It provides basic user oper
 - 👤 **User Management**: Create, get, update and delete users
 - 🔐 **JWT Authentication**: Secure API endpoints with JSON Web Tokens
 - 📊 **MongoDB Database**: Store user data in MongoDB
-- 🧮 **Concurrent User Counting**: Count users concurrently
+- 🧮 **Concurrent User Counting**: Background goroutine logs total user count every 10 seconds
 - 🐳 **Docker Support**: Run everything in containers for easy setup
 
 ## How to Run the Project 🏃‍♂️
@@ -21,30 +21,6 @@ This is a user management API service built with Go. It provides basic user oper
 - MongoDB (already set up in Docker)
 - .env file for local development
 - .env.docker file for docker development
-
-### Environment Variables example
-
-The environment variables are as follows:
-
-```env
-APP_HOST=127.0.0.1 // 0.0.0.0 for docker
-APP_PORT=3000
-APP_NAME=your_app_name
-APP_VERSION=v.0.1.0
-APP_BODY_LIMIT=10490000 # max body size in bytes
-APP_READ_TIMEOUT=60 # max read timeout in seconds
-APP_WRITE_TIMEOUT=60 # max write timeout in seconds
-
-JWT_SECRET_KEY=your_jwt_secret_key # jwt secret key
-JWT_ACCESS_EXPIRES=86400 # jwt access expires in seconds
-
-DB_HOST=db
-DB_PORT=27017
-DB_NAME=userdb
-DB_USER=root
-DB_PASSWORD=root
-DB_MAX_POOL_SIZE=25
-```
 
 ### Using the Makefile (Windows) 🪟
 
@@ -93,6 +69,31 @@ go test ./...
 # Start API locally (not in Docker)
 go run ./cmd/server/main.go
 ```
+
+### Environment Variables example 🛠️
+
+The environment variables are as follows:
+
+```env
+APP_HOST=127.0.0.1 // 0.0.0.0 for docker
+APP_PORT=3000
+APP_NAME=your_app_name
+APP_VERSION=v.0.1.0
+APP_BODY_LIMIT=10490000 # max body size in bytes
+APP_READ_TIMEOUT=60 # max read timeout in seconds
+APP_WRITE_TIMEOUT=60 # max write timeout in seconds
+
+JWT_SECRET_KEY=your_jwt_secret_key # jwt secret key
+JWT_ACCESS_EXPIRES=86400 # jwt access expires in seconds
+
+DB_HOST=db
+DB_PORT=27017
+DB_NAME=userdb
+DB_USER=root
+DB_PASSWORD=root
+DB_MAX_POOL_SIZE=25
+```
+
 
 ## API Endpoints 🌐
 
